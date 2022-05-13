@@ -88,7 +88,7 @@ const loginUser = async function (req, res) {
         let token = jwt.sign({
             userId: getUser._id,
             iat: Math.floor(Date.now() / 1000),
-            exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60
+            exp: Math.floor(Date.now() / 1000) + 20*60*60
         }, "AJpnAsrc@p3");
 
         res.setHeader("x-api-key", token);

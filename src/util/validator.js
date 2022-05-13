@@ -22,6 +22,10 @@ const isValid5 = function (password) {                                          
     let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/
     return passwordRegex.test(password)
 };
+const isValid6 = function(rating){                                                                //validation for ratings
+    let ratingRegex = /^[1-5]$/
+    return ratingRegex.test(rating)
+}
 
 
 module.exports.isValid=isValid
@@ -30,3 +34,4 @@ module.exports.isValid2 = isValid2
 module.exports.isValid3 = isValid3
 module.exports.isValid4 = isValid4
 module.exports.isValid5 = isValid5
+module.exports.isValid6 = isValid6

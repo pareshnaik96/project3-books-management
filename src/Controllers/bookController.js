@@ -58,7 +58,7 @@ const createBook = async function (req, res) {
 const getBook = async function (req, res) {
     try {
         const userInput = req.query
-        
+
         if (userInput.userId) {
             if (!ObjectId.isValid(userInput.userId)) {
                 return res.status(400).send({ status: false, msg: "Not valid Id" })
@@ -133,7 +133,7 @@ const updateBookById = async function (req, res) {
         let updatedSubcategory = req.body.subcategory
 
         if (Object.entries(updatedData).length === 0) return res.status(400).send({ status: false, msg: "NO INPUT BY USER" })//for update required filled can't be blank
-        if (!isValid(updatedTitle)){
+        if (!isValid(updatedTitle)) {
             return res.status(400).send({ status: false, msg: "Title can not be empty" })
         }
         if (!isValid(updatedExcerpt)) {
@@ -142,10 +142,10 @@ const updateBookById = async function (req, res) {
         if (!isValid(updatedReleaseDate)) {
             return res.status(400).send({ status: false, msg: "ReleaseDate can not be empty" })
         }
-        if (!isValid(updatedISBN)){
+        if (!isValid(updatedISBN)) {
             return res.status(400).send({ status: false, msg: "ISBN can not be empty" })
         }
-        if (!isValid(updatedCategory)){
+        if (!isValid(updatedCategory)) {
             return res.status(400).send({ status: false, msg: "Category can not be empty" })
         }
 
@@ -177,7 +177,7 @@ const deleteBookById = async function (req, res) {
     }
     catch (err) {
         console.log(err.message)
-        return res.status(500).send({ msg: "Error", error: err.message })
+        return res.status(500).send({ status: false, msg: "Error", error: err.message })
     }
 }
 
